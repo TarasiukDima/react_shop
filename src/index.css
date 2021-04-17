@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  padding: 0 10%;
+}
+
+.main {
+  flex: 1 0 auto;
+  padding: 1.5rem;
+}
+
+.page-footer {
+  flex: 0 0 auto;
+}
+
+
+.goods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .card-content {
+    width: 100%;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.card .card-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.card .card-action button {
+    display: block;
+    margin-left: 10px;
+}
+
+.cart__quantity {
+    font-size: 1.3rem;
+}
+
+.cart__block {
+    padding: 3px;
+    position: fixed;
+    z-index: 1;
+    bottom: 3rem;
+    right: 2rem;
+}
+
+.basket__list {
+    position: fixed!important;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 50rem;
+    max-width: 95%;
+    box-shadow: 0 0 10px rgb(2, 3, 68);
+    transform: translate(-50%, -50%);
+    transform-origin: top left;
+    background: #fff;
+    animation:  showBasket linear 0.3s;
+}
+
+.cart__title {
+    position: relative;
+}
+
+.cart__title p{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.cart__title button{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+@keyframes showBasket{
+    0% {
+        transform: rotate(360deg) translate(-50%, -50%);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0) translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+.basket__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item__info {
+    display: flex;
+    align-items: center;
+}
+
+.item__count {
+    margin: 0 3px;
+    padding: 2px 3px;
+}
+.item__count button {
+    min-width: 20px;
+    margin: 0 3px;
+    padding: 1px 3px;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.toast__container {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    display: block;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    background: rgb(41, 41, 41);
+    transform: translate(-50%, 0);
+    box-shadow: 0 0 10px #fff;
+    animation:  showToast linear 0.3s;
+}
+
+@keyframes showToast{
+    0% {
+        transform: translate(-50%, 2rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
