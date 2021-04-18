@@ -1,16 +1,14 @@
+import { useContext } from 'react';
+import { ShopContext } from '../context';
+
 const BasketItem = (props) => {
-    const {
-        id,
-        name,
-        price,
-        quantity,
-        removeFromBasket = Function.prototype,
-        incrementBasketItem = Function.prototype,
-        decrementBasketItem = Function.prototype,
-    } = props;
+    const { id, name, price, quantity } = props;
+
+    const { removeFromBasket, incrementBasketItem, decrementBasketItem } = useContext(ShopContext);
+
     return <li className="collection-item basket__item">
         <div className="item__info">
-            {name} X
+            {name} : {price}X
             <p className="item__count">
                 <button onClick={() => decrementBasketItem(id)}>-</button>
                 {quantity}
